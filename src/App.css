@@ -1,0 +1,372 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+:root {
+  --ink: #172033;
+  --muted: #6d7482;
+  --paper: #f7f4ec;
+  --surface: #fffdf8;
+  --lavender: #7c6cff;
+  --lavender-dark: #5c4ee8;
+  --coral: #ff8066;
+  --mint: #b9ead8;
+  --line: #e7e1d5;
+  --shadow: 0 18px 50px rgba(37, 31, 64, 0.09);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "DM Sans", sans-serif;
+}
+
+button,
+input,
+textarea,
+select {
+  font-family: inherit;
+}
+
+.app-shell {
+  min-height: 100vh;
+}
+
+.app-header {
+  background:
+    radial-gradient(circle at 85% 15%, rgba(185, 234, 216, 0.8), transparent 25%),
+    radial-gradient(circle at 10% 80%, rgba(255, 128, 102, 0.16), transparent 24%),
+    #efece3;
+  border-bottom: 1px solid var(--line);
+}
+
+.eyebrow,
+.section-kicker,
+.stat-label {
+  letter-spacing: 0.14em;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.eyebrow,
+.section-kicker {
+  color: var(--lavender-dark);
+}
+
+.app-header h1,
+.section-heading h2,
+.note-title {
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.header-subtitle {
+  color: var(--muted);
+  max-width: 600px;
+}
+
+.header-badge {
+  background: var(--ink);
+  color: #fff;
+  padding: 0.65rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+.badge-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 7px;
+  border-radius: 50%;
+  background: var(--mint);
+}
+
+.composer-card,
+.toolbar-card,
+.stat-card,
+.note-card,
+.empty-state {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+
+.composer-card {
+  border-radius: 28px;
+}
+
+.section-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.edit-badge {
+  background: #eeeaff;
+  color: var(--lavender-dark);
+  border-radius: 999px;
+  padding: 0.45rem 0.75rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.form-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 0.45rem;
+}
+
+.custom-input {
+  border: 1px solid #ddd7ca;
+  background: #fffefb;
+  border-radius: 12px;
+  color: var(--ink);
+}
+
+.custom-input:focus {
+  border-color: var(--lavender);
+  box-shadow: 0 0 0 0.2rem rgba(124, 108, 255, 0.14);
+}
+
+.note-textarea {
+  min-height: 145px;
+  resize: vertical;
+}
+
+.character-count {
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.btn-add {
+  background: var(--lavender);
+  color: #fff;
+  border: 0;
+  font-weight: 700;
+  border-radius: 12px;
+}
+
+.btn-add:hover {
+  background: var(--lavender-dark);
+  color: #fff;
+}
+
+.btn-cancel {
+  background: #f0ede5;
+  border: 0;
+  color: var(--ink);
+  border-radius: 12px;
+}
+
+.toolbar-card {
+  border-radius: 20px;
+}
+
+.search-icon {
+  background: #fffefb;
+  border-color: #ddd7ca;
+  color: var(--lavender-dark);
+  font-size: 1.2rem;
+}
+
+.btn-danger-soft {
+  background: #ffe6df;
+  border: 1px solid #ffd2c8;
+  color: #ad4938;
+  border-radius: 10px;
+}
+
+.btn-danger-soft:hover {
+  background: #ffd8cf;
+  color: #913b2d;
+}
+
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.stat-card {
+  border-radius: 18px;
+  padding: 1.1rem 1.25rem;
+}
+
+.stat-card strong {
+  display: block;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.8rem;
+  margin-top: 0.25rem;
+}
+
+.stat-label {
+  color: var(--muted);
+}
+
+.result-count {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.note-card {
+  border-radius: 22px;
+  padding: 1.35rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.note-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 55px rgba(37, 31, 64, 0.13);
+}
+
+.pinned-note {
+  border-color: #b9b0ff;
+}
+
+.note-card-top {
+  min-height: 28px;
+}
+
+.pinned-badge,
+.category-badge {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 0.35rem 0.65rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.pinned-badge {
+  background: #eeeaff;
+  color: var(--lavender-dark);
+}
+
+.category-study {
+  background: #dff5ed;
+  color: #28715b;
+}
+
+.category-work {
+  background: #ffe4dc;
+  color: #a64a37;
+}
+
+.category-personal {
+  background: #e8e5ff;
+  color: #5549b5;
+}
+
+.category-others {
+  background: #f3e6c8;
+  color: #806226;
+}
+
+.note-title {
+  font-size: 1.25rem;
+  margin: 1rem 0 0.6rem;
+  overflow-wrap: anywhere;
+}
+
+.note-content {
+  color: #596170;
+  line-height: 1.65;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  flex-grow: 1;
+}
+
+.note-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  border-top: 1px solid var(--line);
+  padding-top: 0.8rem;
+  color: var(--muted);
+  font-size: 0.74rem;
+}
+
+.note-meta span:last-child {
+  text-align: right;
+}
+
+.note-actions {
+  display: flex;
+  gap: 0.45rem;
+}
+
+.btn-pin {
+  background: var(--mint);
+  border-color: var(--mint);
+  color: #245d4d;
+}
+
+.btn-pin:hover {
+  background: #a4dfcb;
+  color: #245d4d;
+}
+
+.btn-delete {
+  background: #fff0ec;
+  border-color: #ffd9d0;
+  color: #a64a37;
+}
+
+.btn-delete:hover {
+  background: #ffe0d8;
+  color: #8f3b2b;
+}
+
+.empty-state {
+  border-radius: 24px;
+  text-align: center;
+  padding: 4rem 1.5rem;
+}
+
+.empty-icon {
+  width: 58px;
+  height: 58px;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 1rem;
+  border-radius: 18px;
+  background: #eeeaff;
+  color: var(--lavender-dark);
+  font-size: 1.5rem;
+}
+
+.app-footer {
+  margin-top: 2rem;
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+}
+
+@media (max-width: 767.98px) {
+  .app-header .container {
+    padding-top: 2.5rem !important;
+    padding-bottom: 2.5rem !important;
+  }
+
+  .stats-row {
+    grid-template-columns: 1fr;
+  }
+
+  .section-heading {
+    flex-direction: column;
+  }
+
+  .header-badge {
+    align-self: flex-start;
+  }
+
+  .note-actions .btn {
+    flex: 1;
+  }
+}
